@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>TripDesigner</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"
+    async></script>
   <link rel="stylesheet" type="text/css" href="../statics/main.css">
   <link rel="stylesheet" type="text/css" href="../statics/landing.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600|Raleway:400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600|Raleway:400,600,700"
+    rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="module"
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
   </script>
-  <script src="js/three.min.js"></script>
-  <script src="js/three-obj-loader.min.js"></script>
-  <script src="js/model-element.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script> -->
+  <!-- <script src="statics/assets/three-obj-loader.min.js"></script>
+  <script src="statics/assets/model-element.min.js"></script> -->
   <!-- Loads <model-viewer> for old browsers like IE11: -->
-  <script nomodule
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
   </script>
+  <script src="statics/assets/three.js"></script>
+  <script src="statics/assets/Detector.js"></script>
+  <script src="statics/assets/OrbitControls.js"></script>
+  <script src="statics/assets/OBJLoader.js"></script>
+  <script src="statics/assets/MTLLoader.js"></script>
 </head>
+
 <body>
-<!-- header ends -->
-<nav class="navbar navbar-default" style="width: 100%; background-color: rgba(0, 0, 0, 0.05); border-radius:0">
-  <div class="container-fluid" style="margin: 0 20px">
-    <div class="navbar-header" >
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand brand" href="landing.html"><span style="color:rgb(145, 181, 77);">3</span>d <span style="color:rgb(145, 181, 77);">R</span>econstruction</a >
+  <!-- header ends -->
+  <nav class="navbar navbar-default" style="width: 100%; background-color: rgba(0, 0, 0, 0.05); border-radius:0">
+    <div class="container-fluid" style="margin: 0 20px">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand brand" href="landing.html"><span style="color:rgb(145, 181, 77);">3</span>d <span
+            style="color:rgb(145, 181, 77);">R</span>econstruction</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-nav-demo">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-nav-demo">
-      <ul class="nav navbar-nav navbar-right" >
-        <li><a href="about.html">About</a></li>
-      </ul>
+  </nav>
+
+
+
+  <div class="container" style="height: 550px">
+    <!-- <div id="landing"> -->
+    <div id="landing-header">
+      <h1>Welcome to <span style="color:rgb(145, 181, 77);">3</span>D <span style="color:rgb(145, 181, 77);">R</span>oom
+        <span style="color:rgb(145, 181, 77);">R</span>econstruction !</h1>
+      <h3>Reconstruct 3D room images from video powered by opendronemap package.</h3>
     </div>
-  </div>
-</nav>
 
-
-
-<div class="container" style="height: 550px">
-  <!-- <div id="landing"> -->
-  <div id="landing-header">
-    <h1>Welcome to <span style="color:rgb(145, 181, 77);">3</span>D <span style="color:rgb(145, 181, 77);">R</span>oom <span style="color:rgb(145, 181, 77);">R</span>econstruction !</h1>
-    <h3>Reconstruct 3D room images from video powered by opendronemap package.</h3>
-  </div>
-
-  <!-- <div class="container">  -->
-  <!--  <ul class="slideshow">
+    <!-- <div class="container">  -->
+    <!--  <ul class="slideshow">
     <x-model class="model" src="~/Desktop/odm_texturing/odm_textured_model.obj"></x-model>
 
     <script src="js/three.min.js"></script>
@@ -59,18 +69,155 @@
     <script src="js/model-element.min.js"></script>
   </ul> -->
 
-  <div class="slideshow">
-    <!-- <x-model class="model" src="~/Desktop/odm_texturing/odm_textured_model.obj"></x-model>
+    <div class="slideshow">
+      <!-- <x-model class="model" src="~/Desktop/odm_texturing/odm_textured_model.obj"></x-model>
 
     <script src="js/three.min.js"></script>
     <script src="js/three-obj-loader.min.js"></script>
     <script src="js/model-element.min.js"></script> -->
 
-    <canvas id="scene"></canvas>
+      <canvas id="scene"></canvas>
 
-    <!-- <img src="static/data/demo.gif"></img> -->
+      <!-- <img src="static/data/demo.gif"></img> -->
+    </div>
   </div>
-</div>
 
+  <script>
 
+    if (!Detector.webgl) {
+      Detector.addGetWebGLMessage();
+    }
 
+    var container;
+
+    var camera, controls, scene, renderer;
+    var lighting, ambient, keyLight, fillLight, backLight;
+
+    init();
+    animate();
+
+    function init() {
+
+      container = document.createElement('div');
+      document.body.appendChild(container);
+
+      /* Camera */
+
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+      camera.position.z = 3;
+
+      /* Scene */
+
+      scene = new THREE.Scene();
+      lighting = false;
+
+      ambient = new THREE.AmbientLight(0xffffff, 1.0);
+      scene.add(ambient);
+
+      keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+      keyLight.position.set(-100, 0, 100);
+
+      fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
+      fillLight.position.set(100, 0, 100);
+
+      backLight = new THREE.DirectionalLight(0xffffff, 1.0);
+      backLight.position.set(100, 0, -100).normalize();
+
+      /* Model */
+
+      var mtlLoader = new THREE.MTLLoader();
+      mtlLoader.setBaseUrl('statics/data/odm_texturing/');
+      mtlLoader.setPath('statics/data/odm_texturing/');
+      mtlLoader.load('odm_textured_model.mtl', function (materials) {
+
+        materials.preload();
+
+        // materials.materials.default.map.magFilter = THREE.NearestFilter;
+        // materials.materials.default.map.minFilter = THREE.LinearFilter;
+
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.setPath('statics/data/odm_texturing/');
+        objLoader.load('odm_textured_model.obj', function (object) {
+
+          scene.add(object);
+
+        });
+
+      });
+
+      /* Renderer */
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
+
+      container.appendChild(renderer.domElement);
+
+      /* Controls */
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.25;
+      controls.enableZoom = false;
+
+      /* Events */
+
+      window.addEventListener('resize', onWindowResize, false);
+      window.addEventListener('keydown', onKeyboardEvent, false);
+
+    }
+
+    function onWindowResize() {
+
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+    }
+
+    function onKeyboardEvent(e) {
+
+      if (e.code === 'KeyL') {
+
+        lighting = !lighting;
+
+        if (lighting) {
+
+          ambient.intensity = 0.25;
+          scene.add(keyLight);
+          scene.add(fillLight);
+          scene.add(backLight);
+
+        } else {
+
+          ambient.intensity = 1.0;
+          scene.remove(keyLight);
+          scene.remove(fillLight);
+          scene.remove(backLight);
+
+        }
+
+      }
+
+    }
+
+    function animate() {
+
+      requestAnimationFrame(animate);
+
+      controls.update();
+
+      render();
+
+    }
+
+    function render() {
+
+      renderer.render(scene, camera);
+
+    }
+
+  </script>
