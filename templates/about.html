@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TripDesigner</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="landing.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600|Raleway:400,600,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- header ends -->
+<nav class="navbar navbar-default" style="width: 100%; background-color: rgba(0, 0, 0, 0.05); border-radius:0">
+  <div class="container-fluid" style="margin: 0 20px">
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand brand" href="landing.html"><span style="color:rgb(145, 181, 77);">3</span>d <span style="color:rgb(145, 181, 77);">R</span>econstruction</a >
+    </div>
+    <div class="collapse navbar-collapse" id="bs-nav-demo">
+      <ul class="nav navbar-nav navbar-right" >
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="height: 550px">
+  <!-- <div id="landing"> -->
+  <div id="landing-header">
+    <h1>Welcome to <span style="color:rgb(145, 181, 77);">3</span>D <span style="color:rgb(145, 181, 77);">R</span>oom <span style="color:rgb(145, 181, 77);">R</span>econstruction !</h1>
+  </div>
+
+  <!-- <div class="container">  -->
+  <ul class="slideshow">
+    <img src="about.jpg" width=100% height=100%/>
+  </ul>
+</div>
+
+<div class="container-fluid" style="height: 600px;width:90%; padding: 0 2%; margin: 80px auto">
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-4 col-sm-4">
+      <div class="thumbnail intro-icon">
+        <img src="3d_icon.png" width=100% height=100%/>
+      </div>
+      <div class="intro">
+        <h4 style="font-size:20px">Experience the world of 3D</h4>
+        <div class="intro-text">
+          Bring the world of 3D to your clients today!  Level up your listings by hosting virtual tours (VR-compatible).
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 col-sm-4">
+      <div class="thumbnail intro-icon">
+        <img src="ai_icon.png" width=100% height=100%/>
+      </div>
+      <div class="intro">
+        <h4 style="font-size:20px">New frontiers in AI</h4>
+        <div class="intro-text">
+          Using the latest innovations in AI, we can construct 3D models from a video!  Just give us a walkthrough video of your listing, and we'll convert it a 3D model right away.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 col-sm-4">
+      <div class="thumbnail intro-icon">
+        <img src="house-icon.png" width=100% height=100%/>
+      </div>
+      <div class="intro">
+        <h4 style="font-size:20px">State-of-the-art technologies</h4>
+        <div class="intro-text">
+          Our pipelines leverage state-of-the-art technologies for 3D reconstructions.  From a video we extract the sharpest images and use structure-from-motion to construct a sparse point cloud from the images. Next we perform a process called "cloud densification" to turn the sparse point cloud into a dense point cloud, before triangulating the dense point cloud into surfaces.  Finally, the surfaces are textured over by overlaying images, and the resulting object mosaic is packaged into a 3D object for your viewing pleasure.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
